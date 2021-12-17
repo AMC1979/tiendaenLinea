@@ -10,9 +10,9 @@ module.exports = {
      */
 
      await queryInterface.createTable('orders', {
-     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+     id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
     userId: {
-      type: DataTypes.INTEGER,
+      type: Sequelize.INTEGER,
       references: {
         model: 'users',
         key: 'id',
@@ -20,16 +20,16 @@ module.exports = {
       onDelete: 'CASCADE',
     },
     productId: {
-      type: DataTypes.INTEGER,
+      type: Sequelize.INTEGER,
       references: {
         model: 'products',
         key: 'id',
       },
       onDelete: 'CASCADE',
     },
-    quantity: DataTypes.INTEGER,
-    createdAt: DataTypes.DATE,
-    updatedAt: DataTypes.DATE,
+    quantity: Sequelize.INTEGER,
+    createdAt: Sequelize.DATE,
+    updatedAt: Sequelize.DATE,
   })
   },
 

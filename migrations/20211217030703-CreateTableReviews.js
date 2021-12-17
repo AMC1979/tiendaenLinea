@@ -10,8 +10,8 @@ module.exports = {
      */
 
      await queryInterface.createTable('reviews', {
-     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-     content: DataTypes.TEXT,
+     id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
+     content: Sequelize.TEXT,
      // Rel ==  Producto y la reseña
       productId: {
        type: Sequelize.INTEGER,
@@ -21,8 +21,8 @@ module.exports = {
        },
        onDelete: 'CASCADE',
      },
-     createdAt: DataTypes.DATE,
-     updatedAt: DataTypes.DATE,
+     createdAt: Sequelize.DATE,
+     updatedAt: Sequelize.DATE,
     })
   },
 
